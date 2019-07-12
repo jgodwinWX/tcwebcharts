@@ -1,0 +1,14 @@
+#!/bin/bash
+# put the best-track ATCF files here
+export DISPLAY=":0.0"
+export CHART_PATH=/home/jgodwin/Documents/python/web_tracking_chart
+wget http://ftp.nhc.noaa.gov/atcf/btk/bal092013.dat -O $CHART_PATH/bal092013.csv
+
+# run the python script
+python $CHART_PATH/web_chart.py >& $CHART_PATH/web_chart.log
+
+# send to website
+#scp $CHART_PATH/tracking_chart.png jgodwin@gustav.rsmas.miami.edu:/home/jgodwin/share/http/.
+cp $CHART_PATH/tracking_chart.png ~/share/http/.
+
+echo "foo" >& $CHART_PATH/foo.txt

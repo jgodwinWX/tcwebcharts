@@ -1,0 +1,16 @@
+# ignore all logs
+*.log
+
+# ignore csv files
+*.csv
+old/
+
+# ignore my shell script for automating
+*.sh*
+
+# ignore work files
+no_active.py~
+web_chart.py~
+
+# ignore files created at runtime
+*.png
