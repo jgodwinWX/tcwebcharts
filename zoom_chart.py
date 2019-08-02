@@ -24,9 +24,9 @@ def windRound(x):
     return int(5 * round(float(x)/5))
 
 # user settings
-atcf_file = '/home/jgodwin/python/web_tracking_chart/bal962019.csv'
-stormname = 'Invest 96L'
-savename = '96l.png'
+atcf_file = '/home/jgodwin/python/web_tracking_chart/bal962019.csv' # path to ATCF file
+stormname = 'Invest 96L'                        # name of tropical cyclone
+savename = '/var/www/html/images/96l.png'       # path to save plot
 latrange = 10.0      # window for latitude...plot will be twice this value north-south (default: 5.0)
 lonrange = 12.5      # window for longitude...plot will be twice this value east-west (default: 7.5)
 test_mode = False
