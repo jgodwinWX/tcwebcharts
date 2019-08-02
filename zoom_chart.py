@@ -24,8 +24,11 @@ def windRound(x):
     return int(5 * round(float(x)/5))
 
 # user settings
-atcf_file = '/home/jgodwin/python/web_tracking_chart/bal022019.csv'
-stormname = 'Tropical Storm Barry'
+atcf_file = '/home/jgodwin/python/web_tracking_chart/bal962019.csv'
+stormname = 'Invest 96L'
+savename = '96l.png'
+latrange = 10.0      # window for latitude...plot will be twice this value north-south (default: 5.0)
+lonrange = 12.5      # window for longitude...plot will be twice this value east-west (default: 7.5)
 test_mode = False
 
 # conversion factors (constants)
@@ -62,8 +65,8 @@ rad4 = vatcf['Rad4']
 
 # set up basemap
 fig = plt.figure(figsize=(10,8))
-m = Basemap(projection='merc',llcrnrlat=latitude-5.0,urcrnrlat=latitude+5.0,\
-    llcrnrlon=longitude-7.5,urcrnrlon=longitude+7.5,resolution='i',lat_ts=20.0)
+m = Basemap(projection='merc',llcrnrlat=latitude-latrange,urcrnrlat=latitude+latrange,\
+    llcrnrlon=longitude-lonrange,urcrnrlon=longitude+lonrange,resolution='i',lat_ts=20.0)
 m.bluemarble()
 m.drawcounties(color='gray',linewidth=1)
 m.drawstates(color='gray',linewidth=2)
@@ -105,4 +108,4 @@ plt.annotate('Latitude: %.1f\nLongitude: %.1f' % (latitude,longitude),(0,0),(150
     xycoords='axes fraction',textcoords='offset points',va='top',fontsize=10)
 # save figure
 plt.title('%s - valid %s00 UTC' % (stormname,dt_str))
-plt.savefig('/var/www/html/images/02L.png',bbox_inches='tight')
+plt.savefig('/var/www/html/images/%s' % savename,bbox_inches='tight')
