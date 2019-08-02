@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 ################ User controls #######################
 
 atcf_file = ['/home/jgodwin/python/web_tracking_chart/bal962019.csv']
+# if namedStorm is set to True, the invest portion of the track will be ommitted
 namedStorm = [False]
 
 ######################################################
